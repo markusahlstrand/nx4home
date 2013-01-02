@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nx4Home", "Nx4Home\Nx4Home.csproj", "{A1EFC6F0-4ABB-4C09-BF16-A669DE018C23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nx4Home.Specs", "Nx4Home.Specs\Nx4Home.Specs.csproj", "{48E9C44A-7BBA-42FC-9FC4-EA34579A9C82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nx4Home.Tests", "Nx4Home.Tests\Nx4Home.Tests.csproj", "{4946F68C-650A-463D-8A82-B0B8ACD8140D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1EFC6F0-4ABB-4C09-BF16-A669DE018C23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1EFC6F0-4ABB-4C09-BF16-A669DE018C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1EFC6F0-4ABB-4C09-BF16-A669DE018C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1EFC6F0-4ABB-4C09-BF16-A669DE018C23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48E9C44A-7BBA-42FC-9FC4-EA34579A9C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48E9C44A-7BBA-42FC-9FC4-EA34579A9C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48E9C44A-7BBA-42FC-9FC4-EA34579A9C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48E9C44A-7BBA-42FC-9FC4-EA34579A9C82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4946F68C-650A-463D-8A82-B0B8ACD8140D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4946F68C-650A-463D-8A82-B0B8ACD8140D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4946F68C-650A-463D-8A82-B0B8ACD8140D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4946F68C-650A-463D-8A82-B0B8ACD8140D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
