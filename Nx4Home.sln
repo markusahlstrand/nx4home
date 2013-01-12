@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nx4Home.Specs", "Nx4Home.Sp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nx4Home.Tests", "Nx4Home.Tests\Nx4Home.Tests.csproj", "{4946F68C-650A-463D-8A82-B0B8ACD8140D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nx4Home.Tasks", "Nx4Home.Tasks\Nx4Home.Tasks.csproj", "{0779E661-D676-4278-8F77-377081D68B49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{4946F68C-650A-463D-8A82-B0B8ACD8140D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4946F68C-650A-463D-8A82-B0B8ACD8140D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4946F68C-650A-463D-8A82-B0B8ACD8140D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0779E661-D676-4278-8F77-377081D68B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0779E661-D676-4278-8F77-377081D68B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0779E661-D676-4278-8F77-377081D68B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0779E661-D676-4278-8F77-377081D68B49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

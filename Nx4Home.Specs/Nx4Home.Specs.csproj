@@ -59,6 +59,7 @@
       <DependentUpon>ReadSystemStatus.feature</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps\Thens.cs" />
     <Compile Include="Steps\Whens.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +71,12 @@
       <LastGenOutput>ReadSystemStatus.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nx4Home\Nx4Home.csproj">
+      <Project>{a1efc6f0-4abb-4c09-bf16-a669de018c23}</Project>
+      <Name>Nx4Home</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

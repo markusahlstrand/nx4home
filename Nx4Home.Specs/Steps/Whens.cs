@@ -13,7 +13,10 @@ namespace Nx4Home.Specs.Steps
         [When(@"I request the system status")]
         public void WhenIRequestTheSystemStatus()
         {
-            ScenarioContext.Current.Pending();
+            AlarmSystem alarmSystem = new AlarmSystem();
+            ScenarioContext.Current.Set(alarmSystem);
+
+            alarmSystem.ReadStatus();
         }
     }
 }
