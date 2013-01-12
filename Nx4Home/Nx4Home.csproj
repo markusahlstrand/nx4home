@@ -42,6 +42,8 @@
     <Compile Include="AlarmMessageEventArgs.cs" />
     <Compile Include="AlarmSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\ChecksumUtils.cs" />
+    <Compile Include="Utils\MessageUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
