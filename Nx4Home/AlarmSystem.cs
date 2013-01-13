@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Nx4Home.Utils;
+using System;
 using System.Collections.Generic;
 using System.IO.Ports;
 using System.Linq;
@@ -36,14 +37,39 @@ namespace Nx4Home
         {
             string RxString = serialPort.ReadExisting();
 
-            MessageReceived.Invoke(this, new AlarmMessageEventArgs() {  ByteMessage = Encoding.ASCII.GetBytes(RxString) }); 
+            //byte[] message = MessageUtils.ParseMessage(Encoding.ASCII.GetBytes(RxString));
+            string message = MessageUtils.ParseASCIIMessage(Encoding.ASCII.GetBytes(RxString));
+
+
+            MessageReceived.Invoke(this, new AlarmMessageEventArgs() {  StringMessage = message }); 
         }
 
 
+        public void Arm()
+        {
+            byte[] message = new byte[] 
+            { 
+                Constants.Command.PrimaryKeypadFunctionWithoutPinWithAck
+                , Constants.FunctionPerformed.ArmInAwayMode
+                , 0x01
+                , 0x02
+            };
+            //byte[] packagedMessage = MessageUtils.PackageBinaryMessage(message);
+            byte[] packagedMessage = MessageUtils.PackageASCIIMessage(message);
+
+            serialPort.Write(packagedMessage, 0, packagedMessage.Length);  
+        }
+
         public void ReadStatus()
         {
-            byte[] message = new byte[] { 126, 7, 132, 9, 125, 94, 16, 88, 1, 0, 124, 209 };
-            serialPort.Write(message, 0, message.Length);            
+            byte[] message = new byte[] { 0x84, 0x09, 0x7E, 0x10, 0x58, 0x01, 0x00 };
+            byte[] packagedMessage = MessageUtils.PackageBinaryMessage(message);
+
+            serialPort.Write(packagedMessage, 0, packagedMessage.Length);
+
+
+            //byte[] message = new byte[] { 126, 7, 132, 9, 125, 94, 16, 88, 1, 0, 124, 209 };
+            serialPort.Write(packagedMessage, 0, packagedMessage.Length);
         }
 
         public void RejectMessage()
@@ -54,8 +80,10 @@ namespace Nx4Home
 
         public void AcknowledgeMessage()
         {
-            byte[] message = new byte[] { 126, 1, 29, 30, 31 };
-            serialPort.Write(message, 0, message.Length);
+            byte[] message = new byte[] { 0x1D };
+            byte[] packagedMessage = MessageUtils.PackageBinaryMessage(message);
+
+            serialPort.Write(packagedMessage, 0, packagedMessage.Length);
         }
 
         public delegate void MessageReceivedDelegate(object sender, AlarmMessageEventArgs args);

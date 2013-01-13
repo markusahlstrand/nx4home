@@ -32,13 +32,25 @@ namespace Nx4Home.Tests.Utils
         }
 
         [TestMethod]
-        public void PackageMessage()
+        public void PackageASCIIMessage()
         {
             byte[] message = new byte[] { 0x84, 0x09, 0x7E, 0x10, 0x58, 0x01, 0x00 };
             byte[] expectedMessage = new byte[] { 0x0A, 0x07, 0x84, 0x09, 0x7E, 0x10, 0x58, 0x01, 0x00, 0x7C, 0xD1, 0x0D };
 
 
-            byte[] packagedMessage = MessageUtils.PackageMessage(message);
+            byte[] packagedMessage = MessageUtils.PackageASCIIMessage(message);
+
+            CollectionAssert.AreEqual(expectedMessage, packagedMessage);
+        }
+
+        [TestMethod]
+        public void PackageBinaryMessage()
+        {
+            byte[] message = new byte[] { 0x84, 0x09, 0x7E, 0x10, 0x58, 0x01, 0x00 };
+            byte[] expectedMessage = new byte[] { 0x7E, 0x07, 0x84, 0x09, 0x7D, 0x5E, 0x10, 0x58, 0x01, 0x00, 0x7C, 0xD1 };
+
+
+            byte[] packagedMessage = MessageUtils.PackageBinaryMessage(message);
 
             CollectionAssert.AreEqual(expectedMessage, packagedMessage);
         }

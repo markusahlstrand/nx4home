@@ -17,16 +17,18 @@ namespace Nx4Home.Tasks
 
             alarmSystem.MessageReceived += (sender, messageArgs) =>
                 {
-                    Console.WriteLine("New message");
-                    foreach (byte b in messageArgs.ByteMessage)
-                    {
-                        Console.Write(b.ToString());
-                        Console.Write(',');
-                    }
-                    Console.WriteLine();
+                    Console.WriteLine(messageArgs.StringMessage);
+                    //Console.WriteLine("New message");
+                    //foreach (byte b in messageArgs.ByteMessage)
+                    //{
+                    //    Console.Write(b.ToString());
+                    //    Console.Write(',');
+                    //}
+                    //Console.WriteLine();
                 };
 
             //alarmSystem.ReadStatus();
+            alarmSystem.Arm();
             while (true)
             {
                 Thread.Sleep(3000);

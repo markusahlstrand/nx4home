@@ -7,6 +7,7 @@ namespace Nx4Home
 {
     public class AlarmMessageEventArgs
     {
-        public byte[] ByteMessage { get; set; }       
+        public byte[] ByteMessage { get; set; }
+        public string StringMessage { get; set; }
     }
 }
