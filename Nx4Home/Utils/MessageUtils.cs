@@ -47,15 +47,15 @@ namespace Nx4Home.Utils
 
         public static byte[] PackageASCIIMessage(byte[] message)
         {
-            int messageLength = message.Length;
-            byte[] packagedMessage = new byte[messageLength + 5];
-            packagedMessage[0] = STARTBIT;
-            packagedMessage[1] = (byte)messageLength;
-            message.CopyTo(packagedMessage, 2);
-            ChecksumUtils.CalculateFletcher16Checksum(packagedMessage, 1, messageLength + 1);
-            packagedMessage[messageLength + 4] = STOPBIT;
+            byte[] messageWithChecksum = new byte[message.Length + 3];
+            messageWithChecksum[0] = (byte)message.Length;
+            message.CopyTo(messageWithChecksum, 1);
+            ChecksumUtils.CalculateFletcher16Checksum(messageWithChecksum, 0, message.Length);
 
-            return packagedMessage;
+            string packagedMessage = string.Format("\n{0}\r"
+                , BitConverter.ToString(messageWithChecksum).Replace("-", string.Empty));
+
+            return Encoding.ASCII.GetBytes(packagedMessage);
         }
 
 

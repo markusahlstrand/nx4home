@@ -12,6 +12,12 @@ namespace Nx4Home
     {
         SerialPort serialPort;
 
+        enum CommunicationMode
+        {
+            Binary,
+            ASCII
+        }
+
         public AlarmSystem()
         {
             serialPort = new SerialPort();
@@ -21,6 +27,7 @@ namespace Nx4Home
             serialPort.DataBits = 8;
             serialPort.StopBits = StopBits.One;
 
+            communicationMode = CommunicationMode.ASCII;
 
             serialPort.DataReceived += serialPort_DataReceived;
             serialPort.Open();
@@ -88,6 +95,7 @@ namespace Nx4Home
 
         public delegate void MessageReceivedDelegate(object sender, AlarmMessageEventArgs args);
         public event MessageReceivedDelegate MessageReceived;
+        private CommunicationMode communicationMode;
 
     }    
 }
